@@ -3,8 +3,13 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 
 const EMAILJS_SERVICE_ID = 'service_iexfwj4'
-const EMAILJS_TEMPLATE_ID = 'template_4a2090c'
 const EMAILJS_PUBLIC_KEY = '92y8BwA5JXl9ehFDc'
+
+// NOTE: It is highly recommended to create separate templates in your EmailJS account
+// for each form to ensure all data fields are captured correctly.
+const EMAILJS_CONTACT_TEMPLATE_ID = 'template_4a2090c' // This was the original template ID, assuming it's for the 'Get In Touch' form.
+const EMAILJS_INQUIRY_TEMPLATE_ID = 'YOUR_INQUIRY_TEMPLATE_ID' // <<< IMPORTANT: Add your EmailJS template ID for project inquiries here.
+const EMAILJS_FEEDBACK_TEMPLATE_ID = 'YOUR_FEEDBACK_TEMPLATE_ID' // <<< IMPORTANT: Add your EmailJS template ID for feedback submissions here.
 
 // Helper to load EmailJS SDK from CDN (more reliable than npm in Next.js client components)
 let emailJsPromise = null
@@ -313,7 +318,7 @@ export default function Page() {
     let sent = false
     if (ejs) {
       try {
-        await ejs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+        await ejs.send(EMAILJS_SERVICE_ID, EMAILJS_CONTACT_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
         sent = true
       } catch (err) {
         console.error('EmailJS send failed:', err)
@@ -380,7 +385,7 @@ export default function Page() {
     let sent = false
     if (ejs) {
       try {
-        await ejs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+        await ejs.send(EMAILJS_SERVICE_ID, EMAILJS_INQUIRY_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
         sent = true
       } catch (err) {
         console.error('EmailJS inquiry send failed:', err)
@@ -456,7 +461,7 @@ export default function Page() {
           to_email: 'jailenannm@gmail.com',
           reply_to: payload.email,
         }
-        await ejs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+        await ejs.send(EMAILJS_SERVICE_ID, EMAILJS_FEEDBACK_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
       } catch (emailErr) {
         console.error('EmailJS notification failed:', emailErr)
       }
@@ -1156,6 +1161,15 @@ export default function Page() {
               <h4>Location</h4>
               <p>{"Labo, Camarines Norte"}<br />Philippines</p>
             </div>
+          </div>
+          <div className="footer-bottom">
+            <p>{"© 2024 Jailen Ann A. Mostoles. All rights reserved."}</p>
+          </div>
+        </div>
+      </footer>
+    </>
+  )
+}
           </div>
           <div className="footer-bottom">
             <p>{"© 2024 Jailen Ann A. Mostoles. All rights reserved."}</p>
