@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jailen Ann A. Mostoles - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/globals.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+
+<body>
+    <!-- Particle Background -->
+    <div class="particle-container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;">
+        <nav class="nav-container">
+            <div class="nav-logo" id="theme-toggle">
+                <i class="fas fa-code"></i> JAI DEV
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-text">
+                    <h1><span class="typing-text">Hello! I'm <span class="gradient-text">Jailen Ann</span></span></h1>
+                    <p class="subtitle">Bachelor of Science in Information Technology</p>
+                    <p class="intro-text">Specializing in Full-Stack Development, Database Management, and UI/UX Design.
+                        Passionate about building innovative solutions.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('projects')">View My Work</button>
+                        <button class="btn btn-secondary"
+                            onclick="openContactModal()">Get In Touch</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-3d-container noselect">
+                        <div class="canvas-3d">
+                            <div class="tracker tr-1"></div>
+                            <div class="tracker tr-2"></div>
+                            <div class="tracker tr-3"></div>
+                            <div class="tracker tr-4"></div>
+                            <div class="tracker tr-5"></div>
+                            <div class="tracker tr-6"></div>
+                            <div class="tracker tr-7"></div>
+                            <div class="tracker tr-8"></div>
+                            <div class="tracker tr-9"></div>
+                            <div id="profile-card">
+                                <div class="card-content">
+                                    <div class="card-glare"></div>
+                                    <div class="cyber-lines">
+                                        <span></span><span></span><span></span><span></span>
+                                    </div>
+                                    <img id="profileImage" src="public/profile.jpg"
+                                        alt="Profile Picture of Jailen Ann A. Mostoles" class="profile-img-3d">
+                                    <div class="glowing-elements">
+                                        <div class="glow-1"></div>
+                                        <div class="glow-2"></div>
+                                        <div class="glow-3"></div>
+                                    </div>
+                                    <div class="card-particles">
+                                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                                    </div>
+                                    <div class="corner-elements">
+                                        <span></span><span></span><span></span><span></span>
+                                    </div>
+                                    <div class="scan-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="profile-name">Jailen Ann A. Mostoles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-card clickable-card" onclick="openAboutModal('background')">
+                    <div class="card-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Background</h3>
+                    <p>20-year-old BSIT student from Camarines Norte State College. Born and raised in Labo, with a
+                        passion for technology and continuous learning.</p>
+                    <span class="card-link">Learn More →</span>
+                </div>
+                <div class="about-card clickable-card" onclick="openAboutModal('education')">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Completed elementary with honors and graduated high school with honors. Currently pursuing
+                        Bachelor of Science in Information Technology.</p>
+                    <span class="card-link">Learn More →</span>
+                </div>
+                <div class="about-card clickable-card" onclick="openAboutModal('goals')">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Career Goals</h3>
+                    <p>Aspire to become a professional full-stack developer and Database Specialist. Passionate about
+                        solving real-world problems through technology.</p>
+                    <span class="card-link">Learn More →</span>
+                </div>
+                <div class="about-card clickable-card" onclick="openAboutModal('interests')">
+                    <div class="card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Interests</h3>
+                    <p>Web Development, Database Design, System Development, UI/UX Design, and Software Engineering.
+                        Always eager to learn new technologies.</p>
+                    <span class="card-link">Learn More →</span>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="location-section">
+                    <h3>Location & Connect</h3>
+                    <div id="map" class="map-container"></div>
+                    <p class="location-info">Labo, Camarines Norte, Philippines</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/jailen-ann-a-mostoles-b3b2b22a9/" target="_blank"
+                            class="social-btn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/jailenannm-web" target="_blank" class="social-btn">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/leneeeiee_" target="_blank" class="social-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
+                <!-- Frontend Card -->
+                <div class="skill-parent">
+                    <div class="skill-card">
+                        <div class="glass"></div>
+                        <div class="card-content">
+                            <h3 class="card-category">FRONTEND</h3>
+                            <p class="card-description">HTML • CSS • JavaScript • React • Building responsive and interactive UIs</p>
+                            <div class="card-footer">
+                                <div class="social-icons">
+                                    <a href="#" class="icon-link">•</a>
+                                    <a href="#" class="icon-link">•</a>
+                                    <a href="#" class="icon-link">•</a>
+                                </div>
+                                <a href="#" class="view-more">View more →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Card -->
+                <div class="skill-parent">
+                    <div class="skill-card">
+                        <div class="glass"></div>
+                        <div class="card-content">
+                            <h3 class="card-category">BACKEND</h3>
+                            <p class="card-description">PHP • MySQL • Supabase • Server-side development and database management</p>
+                            <div class="card-footer">
+                                <div class="social-icons">
+                                    <a href="#" class="icon-link">•</a>
+                                    <a href="#" class="icon-link">•</a>
+                                    <a href="#" class="icon-link">•</a>
+                                </div>
+                                <a href="#" class="view-more">View more →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools Card -->
+                <div class="skill-parent">
+                    <div class="skill-card">
+                        <div class="glass"></div>
+                        <div class="card-content">
+                            <h3 class="card-category">TOOLS</h3>
+                            <p class="card-description">Git • GitHub • Figma • VS Code • Development tools and version control systems</p>
+                            <div class="card-footer">
+                                <div class="social-icons">
+                                    <a href="#" class="icon-link">•</a>
+                                    <a href="#" class="icon-link">•</a>
+                                    <a href="#" class="icon-link">•</a>
+                                </div>
+                                <a href="#" class="view-more">View more →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Sonder - Mental Health Awareness Website -->
+                <div class="project-card" onclick="openProjectModal('sonder')">
+                    <div class="project-img">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Sonder - Mental Health Awareness Website</h3>
+                    <p>A comprehensive mental health awareness platform designed to provide resources, support, and education on mental wellness. Features include articles, community forums, and professional consultation booking.</p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <button class="btn btn-small" onclick="event.stopPropagation(); openInquiryModal('Sonder - Mental Health Awareness Website')">Inquire</button>
+                </div>
+
+                <!-- Sta. Cruz Elementary School Property Custodian Management System -->
+                <div class="project-card" onclick="openProjectModal('escpms')">
+                    <div class="project-img">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Sta. Cruz Elementary School Property Custodian Management System</h3>
+                    <p>A specialized management system for tracking school property, maintenance schedules, and custodial tasks. Enables efficient resource management and accountability for school assets.</p>
+                    <div class="project-tech">
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>Laravel</span>
+                    </div>
+                    <button class="btn btn-small" onclick="event.stopPropagation(); openInquiryModal('Sta. Cruz Elementary School Property Custodian Management System')">Inquire</button>
+                </div>
+
+                <!-- CNSC Auxiliary - Local Only Point of Sale System -->
+                <div class="project-card" onclick="openProjectModal('cnscpos')">
+                    <div class="project-img">
+                        <i class="fas fa-cash-register"></i>
+                    </div>
+                    <h3>CNSC Auxiliary - Local Only Point of Sale System</h3>
+                    <p>A local point-of-sale system designed for CNSC Auxiliary operations. Features inventory management, transaction processing, sales reporting, and secure checkout capabilities for local-only operations.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>SQLite</span>
+                        <span>Tkinter</span>
+                    </div>
+                    <button class="btn btn-small" onclick="event.stopPropagation(); openInquiryModal('CNSC Auxiliary - Local Only Point of Sale System')">Inquire</button>
+                </div>
+            </div>
+
+            <div class="github-section">
+                <button class="btn btn-primary" onclick="loadGitHubRepos()">Load My GitHub Projects</button>
+                <div id="githubRepos" class="github-projects-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Get In Touch</h2>
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="contactName" placeholder="Your name" required>
+                    <span class="error-msg" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="contactEmail" placeholder="Your email" required>
+                    <span class="error-msg" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                    <label>Phone (Optional)</label>
+                    <input type="tel" id="contactPhone" placeholder="Your phone">
+                    <span class="error-msg" id="phoneError"></span>
+                </div>
+                <div class="form-group">
+                    <label>Message *</label>
+                    <textarea id="contactMessage" placeholder="Your message" rows="5" required></textarea>
+                    <span class="error-msg" id="messageError"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div id="contactResponse" class="response-msg"></div>
+        </div>
+    </div>
+
+    <!-- Inquiry Modal -->
+    <div id="inquiryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeInquiryModal()">&times;</span>
+            <h2>Project Inquiry</h2>
+            <p id="inquiryProject" class="inquiry-project"></p>
+            <form id="inquiryForm" onsubmit="handleInquirySubmit(event)">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="inquiryName" placeholder="Your name" required>
+                    <span class="error-msg" id="inquiryNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="inquiryEmail" placeholder="Your email" required>
+                    <span class="error-msg" id="inquiryEmailError"></span>
+                </div>
+                <div class="form-group">
+                    <label>Company/Organization</label>
+                    <input type="text" id="inquiryCompany" placeholder="Company name">
+                </div>
+                <div class="form-group">
+                    <label>Budget Range *</label>
+                    <select id="inquiryBudget" required>
+                        <option value="">Select budget range</option>
+                        <option value="under-1000">Under $1,000</option>
+                        <option value="1000-5000">$1,000 - $5,000</option>
+                        <option value="5000-10000">$5,000 - $10,000</option>
+                        <option value="above-10000">Above $10,000</option>
+                    </select>
+                    <span class="error-msg" id="inquiryBudgetError"></span>
+                </div>
+                <div class="form-group">
+                    <label>Project Details *</label>
+                    <textarea id="inquiryDetails" placeholder="Tell me about your project" rows="5" required></textarea>
+                    <span class="error-msg" id="inquiryDetailsError"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+            </form>
+            <div id="inquiryResponse" class="response-msg"></div>
+        </div>
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="modal project-modal">
+        <div class="modal-content project-modal-content">
+            <span class="close" onclick="closeProjectModal()">&times;</span>
+            <div class="project-detail-container">
+                <div class="project-detail-image">
+                    <img id="projectDetailImg" src="" alt="Project Screenshot" style="width: 100%; border-radius: 12px;">
+                </div>
+                <div class="project-detail-info">
+                    <h2 id="projectDetailTitle"></h2>
+                    <p id="projectDetailDescription" class="project-detail-description"></p>
+                    <div class="project-detail-tech">
+                        <h4>Technologies Used:</h4>
+                        <div id="projectDetailTechList" class="tech-list"></div>
+                    </div>
+                    <div class="project-detail-features">
+                        <h4>Key Features:</h4>
+                        <ul id="projectDetailFeatures"></ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="openInquiryModalFromDetail()">Request More Info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Detail Modals -->
+    <!-- Background Modal -->
+    <div id="backgroundModal" class="modal about-detail-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAboutModal()">&times;</span>
+            <h2>My Background</h2>
+            <div class="about-detail-content">
+                <p>I am a 20-year-old Bachelor of Science in Information Technology student at <strong>Camarines Norte State College</strong>, currently in my 2nd year of study. Born and raised in <strong>Labo, Camarines Norte, Philippines</strong>, I have always had a deep passion for technology and continuous learning.</p>
+                <p>My journey in technology started at a young age, and I have consistently pushed myself to excel in my academic pursuits. I grew up in a supportive environment that encouraged curiosity and innovation, which shaped my approach to problem-solving and development.</p>
+                <p>Beyond academics, I am driven by a desire to create meaningful solutions that can positively impact people's lives. Whether it's through web development, database design, or system development, I always aim to deliver quality work that meets and exceeds expectations.</p>
+                <p><strong>Personal Interests:</strong> When I'm not coding or studying, I enjoy exploring new technologies, contributing to open-source projects, and staying updated with the latest industry trends.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Modal -->
+    <div id="educationModal" class="modal about-detail-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAboutModal()">&times;</span>
+            <h2>My Education</h2>
+            <div class="about-detail-content">
+                <div class="education-item">
+                    <h3>Primary Education</h3>
+                    <p><strong>Labo Elementary School</strong></p>
+                    <p class="achievement">Graduated with Honors</p>
+                    <p>Completed my elementary education with honors, establishing a strong foundation in academics and character development.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Secondary Education - Junior High School</h3>
+                    <p><strong>Labo Science and Technology High School</strong></p>
+                    <p class="achievement">Graduated with Honors</p>
+                    <p>Excelled in junior high school, where I began to develop my interest in science and technology. This period marked the beginning of my passion for STEM fields.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Secondary Education - Senior High School</h3>
+                    <p><strong>Labo Science and Technology High School</strong></p>
+                    <p class="achievement">Graduated with High Honors</p>
+                    <p>Achieved high honors in senior high school, specializing in STEM strand. This achievement motivated me to pursue higher education in Information Technology.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Tertiary Education - Present</h3>
+                    <p><strong>Camarines Norte State College</strong></p>
+                    <p class="achievement">2nd Year BSIT Student</p>
+                    <p>Currently pursuing my Bachelor of Science in Information Technology degree. I am focused on building a strong foundation in full-stack development, database management, and software engineering principles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Career Goals Modal -->
+    <div id="goalsModal" class="modal about-detail-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAboutModal()">&times;</span>
+            <h2>Career Goals</h2>
+            <div class="about-detail-content">
+                <h3>Short-term Goals (1-2 years)</h3>
+                <ul class="goals-list">
+                    <li>Master full-stack web development with React and Node.js</li>
+                    <li>Complete my BSIT degree with strong academic performance</li>
+                    <li>Build 5+ portfolio projects demonstrating advanced skills</li>
+                    <li>Contribute meaningfully to open-source projects</li>
+                    <li>Gain professional experience through internships and freelance work</li>
+                </ul>
+
+                <h3>Long-term Goals (5+ years)</h3>
+                <ul class="goals-list">
+                    <li>Become a professional <strong>Full-Stack Developer</strong> with expertise in modern web technologies</li>
+                    <li>Develop expertise as a <strong>Database Specialist</strong>, mastering database design and optimization</li>
+                    <li>Lead development teams and mentor junior developers</li>
+                    <li>Build and launch my own tech products/startups</li>
+                    <li>Become a recognized expert in web development and database management</li>
+                    <li>Contribute to industry standards and best practices</li>
+                </ul>
+
+                <h3>Passion & Purpose</h3>
+                <p>I am passionate about solving real-world problems through technology. I believe that great software can make a meaningful difference in people's lives, and I am committed to creating solutions that are not only technically excellent but also user-friendly and impactful.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interests Modal -->
+    <div id="interestsModal" class="modal about-detail-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAboutModal()">&times;</span>
+            <h2>My Interests</h2>
+            <div class="about-detail-content">
+                <div class="interest-category">
+                    <h3><i class="fas fa-code"></i> Web Development</h3>
+                    <p>I love building responsive, interactive web applications using modern technologies like React, JavaScript, and CSS. Creating beautiful and functional user experiences is one of my core passions.</p>
+                </div>
+
+                <div class="interest-category">
+                    <h3><i class="fas fa-database"></i> Database Design & Management</h3>
+                    <p>I enjoy designing efficient database schemas and optimizing queries for performance. Working with MySQL, PostgreSQL, and Supabase, I focus on creating data structures that scale and perform well.</p>
+                </div>
+
+                <div class="interest-category">
+                    <h3><i class="fas fa-pencil-ruler"></i> UI/UX Design</h3>
+                    <p>I have a strong interest in user interface and user experience design. I spend considerable time in Figma creating wireframes, prototypes, and mockups. I believe that good design is the foundation of great software.</p>
+                </div>
+
+                <div class="interest-category">
+                    <h3><i class="fas fa-film"></i> Editing, Layout & Filming</h3>
+                    <p>Beyond coding, I am passionate about visual content creation. I enjoy video editing and layout design, which helps me create compelling presentations and multimedia content for projects and demonstrations.</p>
+                </div>
+
+                <div class="interest-category">
+                    <h3><i class="fas fa-palette"></i> System Development</h3>
+                    <p>I am fascinated by the architecture and design of complex systems. I enjoy learning how different components work together and building scalable, maintainable solutions.</p>
+                </div>
+
+                <div class="interest-category">
+                    <h3><i class="fas fa-graduation-cap"></i> Continuous Learning</h3>
+                    <p>Technology is constantly evolving, and I am committed to staying updated with the latest trends, frameworks, and best practices. I regularly explore new technologies and participate in online courses.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <h2>Testimonials & Feedback</h2>
+            
+            <!-- Add Feedback Button -->
+            <div class="feedback-action">
+                <button class="btn btn-primary" onclick="openFeedbackModal()">Share Your Feedback</button>
+            </div>
+            
+            <div class="testimonials-grid" id="testimonialsGrid">
+                <div class="loading-message">Loading testimonials...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="modal feedback-modal">
+        <div class="modal-content feedback-modal-content">
+            <span class="close" onclick="closeFeedbackModal()">&times;</span>
+            <h2>Share Your Feedback</h2>
+            <form id="feedbackForm" class="feedback-form">
+                <div class="form-group">
+                    <label for="feedbackName">Your Name *</label>
+                    <input type="text" id="feedbackName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackEmail">Your Email *</label>
+                    <input type="email" id="feedbackEmail" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackRole">Your Role</label>
+                    <select id="feedbackRole">
+                        <option value="">Select a role</option>
+                        <option value="Client">Client</option>
+                        <option value="Colleague">Colleague</option>
+                        <option value="Mentor">Mentor</option>
+                        <option value="Friend">Friend</option>
+                        <option value="Team Member">Team Member</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Rating *</label>
+                    <div class="rating-input">
+                        <label for="star5" class="star-label">★</label>
+                        <input type="radio" id="star5" name="rating" value="5" required>
+                        
+                        <label for="star4" class="star-label">★</label>
+                        <input type="radio" id="star4" name="rating" value="4" required>
+                        
+                        <label for="star3" class="star-label">★</label>
+                        <input type="radio" id="star3" name="rating" value="3" required>
+                        
+                        <label for="star2" class="star-label">★</label>
+                        <input type="radio" id="star2" name="rating" value="2" required>
+                        
+                        <label for="star1" class="star-label">★</label>
+                        <input type="radio" id="star1" name="rating" value="1" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackMessage">Your Feedback *</label>
+                    <textarea id="feedbackMessage" placeholder="Share your thoughts and feedback..." rows="5" required></textarea>
+                </div>
+
+                <div id="feedbackStatus" class="feedback-status"></div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot" class="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <div class="chatbot-header" onclick="toggleChatbot()">
+            <div class="chatbot-avatar">
+                <span class="status-dot"></span>
+            </div>
+            <div class="chatbot-header-info">
+                <h3>Chat with Jai</h3>
+                <p class="status-text">Online</p>
+            </div>
+            <button class="chatbot-close" onclick="closeChatbot(event)">&times;</button>
+        </div>
+
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">J</div>
+                <div class="message-content">Hi there! 👋 Thanks for visiting my website. Feel free to ask me anything about programming, web development, or my experiences in tech. Let me know how I can help!</div>
+            </div>
+        </div>
+
+        <div class="chatbot-input-area">
+            <div class="help-text">Ask me about programming, web dev, or tech!</div>
+            <form id="chatForm" class="chatbot-form" onsubmit="sendChatMessage(event)">
+                <input 
+                    type="text" 
+                    id="chatInput" 
+                    class="chatbot-input" 
+                    placeholder="Type a message..." 
+                    autocomplete="off"
+                >
+                <button type="submit" class="chatbot-send">→</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button id="chatbotToggle" class="chatbot-toggle" onclick="toggleChatbot()" title="Chat with Jai" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <span class="chat-icon">💬</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Jailen Ann A. Mostoles</h4>
+                    <p>BSIT Student, Camarines Norte State College</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/jailen-ann-a-mostoles-b3b2b22a9/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/jailenannm-web" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/leneeeiee_" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Location</h4>
+                    <p>Labo, Camarines Norte<br>Philippines</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jailen Ann A. Mostoles. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark-mode';
+        
+        // Apply saved theme
+        if (currentTheme === 'light-mode') {
+            document.body.classList.add('light-mode');
+        }
+
+        // Theme toggle event listener
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            // Save preference
+            const isLightMode = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLightMode ? 'light-mode' : 'dark-mode');
+        });
+
+        // Prevent accidental text selection on click
+        themeToggle.style.cursor = 'pointer';
+
+        
+    </script>
+</body>
+
+</html>
